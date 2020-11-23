@@ -166,7 +166,8 @@ Ans.
 segment tree question : height of segment tree Log(N) && 
 total number of nodes = n (number of leaf nodes) + (n - 1) (internal nodes)
 first building the segment tree {by using recursion (bottom-up approach) in O(2N - 1) time & space i.e O(N)
-Link: https://medium.com/nybles/understanding-range-queries-and-updates-segment-tree-lazy-propagation-and-mos-algorithm-d2cd2f6586d8
+Link[1]: https://medium.com/nybles/understanding-range-queries-and-updates-segment-tree-lazy-propagation-and-mos-algorithm-d2cd2f6586d8
+Link[2]: https://www.hackerearth.com/practice/data-structures/advanced-data-structures/segment-trees/tutorial/
 Here, using segment tree we can implement:
 		Range Min Query
 		Range Max Query
@@ -292,7 +293,7 @@ int main() {
 Lazy propagation :
 		Range Update Queries -> Range Sum Queries
 */
-
+//Range Update query implementation using Lazy Propagation
 void ruqSegmentTree (vector<int>&segmentTree_, vector<int> lazyTree_, int queryUptdValue, int leftBound, int rightBound, int startIndx, int endIndx, int treeNode) {
 	if (lazyTree_[treeNode] != 0) {
 		segmentTree_[treeNode] += (endIndx - startIndx + 1) * lazyTree_[treeNode];
@@ -325,7 +326,7 @@ void ruqSegmentTree (vector<int>&segmentTree_, vector<int> lazyTree_, int queryU
 }
 
 ----------------------------------------------------------------
-
+//Range Sum query implementation using Lazy Propagation
 int rsqSegmentTree (vector<int>&segmentTree_, vector<int> lazyTree_, int leftBound, int rightBound, int startIndx, int endIndx, int treeNode) {
 	if (lazyTree_[treeNode] != 0) {
 		segmentTree_[treeNode] += (endIndx - startIndx + 1) * lazyTree_[treeNode];
