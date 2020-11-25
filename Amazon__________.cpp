@@ -366,4 +366,62 @@ Ans:
 ------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------
 
-2]  
+2]  Zig-Zag traversal of binary tree.
+Ans.
+/*
+if the tree is like 
+			 1
+		   /   \
+		   2    3
+		  / \  / \
+		  7  6 5  4
+for this binary tree output should be 1 3 2 7 6 5 4 
+Remember: whenever you see the pattern that numbers in order are consecutively according to level then there will be a stack implementation
+but how many stack should be used is what you have to identify on time.
+*/
+
+truct Node {
+    Node *left;
+	int val;
+    Node *right;
+
+    Node(int value) : val(value), left (NULL), right (NULL) {}
+};
+
+vector<int> zigZagTraversal (Node* root) {
+	stack<int> currentLevel;
+	stack<int> nextLevel;
+	vector<int> answer;
+	bool leftToRight = false;
+	//first insert root node in currentLevel
+	currentLevel.push(root);
+	while (currentLevel.empty() != true) {
+		Node* currentNode = currentLevel.top();
+		currentLevel.pop();
+		answer.push_back(currentNode->val);
+		if (currentNode != NULL) {
+			if (leftToRight) {
+				if (currentNode->right) {
+					nextLevel.push(currentNode->right);
+				}
+				if (currentNode->left) {
+					nextLevel.push(currentNode->left);
+				}				
+			} else {
+				if (currentNode->left) {
+					nextLevel.push(currentNode->left);
+				} 
+				if (currentNode->right) {
+					nextLevel.push(currentNode->right);
+				}
+			}
+		}
+		if (currentLevel.empty() == true) {
+			leftToRight = !leftToRight;
+			currentLevel.swap(nextLevel);
+		}
+	}
+	return answer;
+}
+------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
