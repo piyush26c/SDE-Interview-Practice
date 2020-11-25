@@ -31,5 +31,18 @@ void allPermutation (string &inputString_, set<string> &outputStorage int leftIn
 	}
 } //time complexity : O(n * n!)
 
+// copy stl algorithm
+template<typename T>
+vector<T> arr;
+copy(arr.beging(), arr.end(), ostream_iterator<T> (cout << " ")); // prints the arr with space separated array
+
+//fill stl algorithm
+fill(arr.begin(), arr.end(), valueToBeFilled);
+
+//Remember : begin() points before the first element in container and end() points after the last element in container.
+
+// time complexity series : log(n) < n < n*log(n) < n^2 < 2^n.
+
+
 
 
