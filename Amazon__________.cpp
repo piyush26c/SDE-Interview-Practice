@@ -425,3 +425,56 @@ vector<int> zigZagTraversal (Node* root) {
 }
 ------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------
+3] Next higher palindromic number using the same set of digits
+Ans.
+
+void reverseString (string &ipStrNum, int startIndx, int endIndx, int lenIpStrNum) {
+	while (startIndx < endIndx) {
+		swap (ipStrNum[startIndx], ipStrNum[endIndx]);
+		startIndx += 1;
+		endIndx -= 1;		
+	}	
+}
+
+string nextHigherPalindromicNumber (string ipStrNum) {
+	int lenIpStrNum = (int) ipStrNum.length();
+	int midIndx;
+	if (lenIpStrNum <= 3) {
+		return "";
+	}
+	if (lenIpStrNum % 2 == 0) {
+		midIndx = (lenIpStrNum / 2) - 1;
+	} else {
+		midIndx = lenIpStrNum / 2;
+	}
+	bool flag = false;
+	int tempIndx = -1;
+	for (int indx = midIndx; indx >= 1; indx--) {
+		if (ipStrNum[indx] > ipStrNum[indx - 1]) {
+			flag = true;
+			tempIndx = indx - 1;			
+		}
+	}
+	if (flag == false) {
+		return "";
+	}
+	int smallestIntIndx = tempIndx + 1;
+	for (int indx = tempIndx + 1; indx <= midIndx; indx++) {
+		if (ipStrNum[indx] > ipStrNum[tempIndx] && ipStrNum[indx] < ipStrNum[smallestInt]) {
+			smallestIntIndx = indx;
+		}
+	}
+	swap (ipStrNum[tempIndx], ipStrNum[smallestIntIndx]);
+	
+	swap (ipStrNum[lenIpStrNum - tempIndx - 1], ipStrNum[lenIpStrNum - smallestIntIndx - 1]);
+	
+	reverseString (&ipStrNum, tempIndx + 1, midIndx, lenIpStrNum);
+	
+	if (lenIpStrNum % 2 == 0) {
+		reverseString (&ipStrNum, midIndx + 1, lenIpStrNum - 1 - tempIndx - 1, lenIpStrNum);
+	} else {
+		reverseString (&ipStrNum, midIndx + 2, lenIpStrNum - 1 - tempIndx - 1, lenIpStrNum);
+	}
+	
+	return ipStrNum;	
+}
