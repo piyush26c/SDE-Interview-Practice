@@ -478,3 +478,4 @@ string nextHigherPalindromicNumber (string ipStrNum) {
 	
 	return ipStrNum;	
 }
+//in main function if return value is "" not possible otherwise answere is returned.
