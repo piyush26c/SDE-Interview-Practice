@@ -212,7 +212,7 @@ void updateSegmentTree(vector<int>&segmentTree_, int queryNodeIndx, int queryNod
 	segmentTree_[treeNode] = min(segmentTree_[2 * treeNode], segmentTree_[2 * treeNode + 1]);
 }
 
-//this function is for minimum oriented queries
+//this function is for minimum oriented queries  {construction of Segment Tree is O(n) time complexity)
 void buildSegmentTree(vector<int>&inputArr_, vector<int>&segmentTree_, int startIndx, int endIndx, int treeNode) {
 	//base case : when both start and end indices will be same
 	if (startIndx == endIndx) {
@@ -479,3 +479,40 @@ string nextHigherPalindromicNumber (string ipStrNum) {
 	return ipStrNum;	
 }
 //in main function if return value is "" not possible otherwise answere is returned.
+------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+4] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
