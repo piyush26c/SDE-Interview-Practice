@@ -380,7 +380,7 @@ Remember: whenever you see the pattern that numbers in order are consecutively a
 but how many stack should be used is what you have to identify on time.
 */
 
-truct Node {
+struct Node {
     Node *left;
 	int val;
     Node *right;
