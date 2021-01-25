@@ -44,5 +44,15 @@ fill(arr.begin(), arr.end(), valueToBeFilled);
 // time complexity series : log(n) < n < n*log(n) < n^2 < 2^n.
 
 
+/*
+To convert binary array to integer
+int final_int = 0;
+for (auto &x : nums) {
+	final_int = (final_int << 1) | x;
+}
+
+
+*/
+
 
 
