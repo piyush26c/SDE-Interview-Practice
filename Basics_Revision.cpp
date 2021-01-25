@@ -50,9 +50,9 @@ int final_int = 0;
 for (auto &x : nums) {
 	final_int = (final_int << 1) | x;
 }
-
-
 */
 
+// a xor b = c 
+// also, b xor c = a
 
 
