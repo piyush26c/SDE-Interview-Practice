@@ -1,0 +1,12 @@
+// getting whitspace contianing string 
+// ex: My name is khan
+
+// scenario 1
+cin >> s;
+cout << s; // output: My
+
+// scenario 2
+getline(cin >> std::ws, s);
+cout << s; // output: My name is khan
+
+// this is because cin >> std::ws is discarding all the whitespaces in the inputstream
