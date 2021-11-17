@@ -28,24 +28,10 @@ vector<string> splitString(string s)
 	vector<string> res;
 	
 	stringstream ss(s);
-    string word;
-    while (ss >> word) {
-        res.push_back(word);
-    }
+	string word;
+	while (ss >> word) {
+	res.push_back(word);
+	}
 	
 	return res;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
