@@ -10,3 +10,4 @@ getline(cin >> std::ws, s);
 cout << s; // output: My name is khan
 
 // this is because cin >> std::ws is discarding all the whitespaces in the inputstream
+// reference: https://stackoverflow.com/a/43845915
