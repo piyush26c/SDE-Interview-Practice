@@ -9,17 +9,10 @@
 using namespace std;
 
 pair<int, int> reduce_fraction_to_lowest_form(int a, int b) {
-  int minelem = min(a, b);
-  int i = 2;
-  while(i <= minelem) {
-    if ((a % i == 0) && (b % i == 0)) {
-      a /= i;
-      b /= i;
-      minelem = min(a, b);
-    } else {
-      i ++;
-    }
-  }
+  int gcd = __gcd(a, b);
+  //cout << "gcd : " << gcd << "\n";
+  a = a / gcd;
+  b = b / gcd;
   return make_pair(a, b);
 }
 
