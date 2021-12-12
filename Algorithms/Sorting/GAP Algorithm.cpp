@@ -39,15 +39,18 @@ class GAP {
 			for (int i = 0; (i + gap) <= (m + n - 1); i++) {
 				int start = i;
 				int end = getNextEnd(start, gap, m);
-
+				
+				// end index viz. (start + gap) is in first array itself
 				if ((start + gap) < m) {
 					if (arr1[start] > arr1[end]) {
 						swap(arr1[start], arr1[end]);
 					}
 				} else {
+					// when start index is in first arrray and end index is in second array
 					if ((start < m) && (arr1[start] > arr2[end])) {
 						swap(arr1[start], arr2[end]);
 					}
+					// both (start & end) indexes are in second array
 					if (start >= m) {
 						start = start - m;
 						if (arr2[start] > arr2[end]) {
