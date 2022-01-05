@@ -1,0 +1,26 @@
+Graph Series:
+	| _ Storing a graph:
+	|	| _ Adjacency List
+	|	| _ Adjacency Matrix
+	|	| _ Edge List
+	|	| _ 2D Matrix (Implicit Graph)
+	|
+	| _ Applications of graph
+	|	| _ shortest path
+	|	| _ social network
+	|	| _ shortest cyclic route
+	|	| _ dependency graph (Directed Acyclic graphs)
+	|	| _ routing algorithms
+	|	| _ computation graphs (deep learning)
+	|	| _ computer vision (image segmentation, flood fill)
+	|	| _ web crawler
+	|	| _ graph databases (ex. Neo4j)
+	|	
+	| _ Types of graph:
+		| _ weighted graphs
+		| _ unweighted graphs
+		| _ directed graphs
+		| _ undirected graphs
+			| _ all edges are bidirectional
+			
+		
