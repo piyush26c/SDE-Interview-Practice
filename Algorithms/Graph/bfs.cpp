@@ -48,8 +48,7 @@ class Graph {
 				if (!visited[ngbr]) {
 					q.push(ngbr);
 					visited[ngbr] = true;
-				}
-				
+				}				
 			}
 		}		
 	}
@@ -70,3 +69,8 @@ int main(){
 	
 	return 0;
 }
+
+/*
+	| _ only limited nodes are visited in this traversal
+	| _ this traversal is used in Single Source Shortest Path (SSS) algorithm/use-case
+*/
