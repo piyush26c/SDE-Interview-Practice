@@ -1,6 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+	Time complexity:
+		| _ adjacency list:
+			| _ O(V + E)
+		| _ adjacency matrix:
+			| _ O(V^2)
+
+	Space complexity:
+		| _ adjacency list:
+			| _ O(V)
+		| _ adjacency matrix:
+			| _ O(V^2)
+*/
+
 class Graph {
     int n;	// number of nodes
     list<int> *l;	// pointer because initially we don't know the number of nodes in graph
