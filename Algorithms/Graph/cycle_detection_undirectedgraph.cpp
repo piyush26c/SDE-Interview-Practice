@@ -37,7 +37,7 @@ class Graph {
 	bool containsCycle() {
 		// graph is single component -- means graph is well connected there is not absolute part present
 		vector<bool> visited(n, false);
-		return dfs(0, visited, -1);
+		return dfs(0, visited, -1);	// -1 because source parent is -1!
 	}		
 };
 
