@@ -23,4 +23,18 @@ Graph Series:
 		| _ undirected graphs
 			| _ all edges are bidirectional
 			
-		
+
+----------------------------------
+<<Important>>
+	| _ to get shortest path cycle in graph we can't use Dfs why not?
+		| _ refer: https://stackoverflow.com/questions/20847463/finding-length-of-shortest-cycle-in-undirected-graph
+			| _ Algorithm by using BFS: https://web.archive.org/web/20170829175217/http://webcourse.cs.technion.ac.il/234247/Winter2003-2004/ho/WCFiles/Girth.pdf
+			
+			
+			
+			
+			
+			
+			
+			
+			
