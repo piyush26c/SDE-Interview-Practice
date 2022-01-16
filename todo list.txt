@@ -1,2 +1,3 @@
-+ cycle detection - undirected graph - [BFS]
+- cycle detection - undirected graph - [BFS]
 + bipartite graph code - [BFS]
++ Cycle Detection in Directed Graph using BFS(Kahn's Algorithm)
