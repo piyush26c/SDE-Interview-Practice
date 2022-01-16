@@ -1,3 +1,13 @@
-- cycle detection - undirected graph - [BFS]
+// to do
 + bipartite graph code - [BFS]
-+ Cycle Detection in Directed Graph using BFS(Kahn's Algorithm)
++ DFS (iterative) implementation of topological sort.
+
+
+
+
+
+
+
+// done!
+- Cycle Detection in Directed Graph using BFS(Kahn's Algorithm)
+- cycle detection - undirected graph - [BFS]
