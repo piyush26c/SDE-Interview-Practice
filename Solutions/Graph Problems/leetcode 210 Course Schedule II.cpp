@@ -10,8 +10,6 @@ public:
 		int n = numCourses;
 		vector<int> ans;
 		
-		int start_node = INT_MAX;
-
 		// creating a graph	
 		vector<vector<int>> graph(n);
 
