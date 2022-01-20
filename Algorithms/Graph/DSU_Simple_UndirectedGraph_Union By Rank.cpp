@@ -8,10 +8,10 @@ using namespace std;
 // cycle detection code for undirected graph
 
 /*
-	find_set() - Time complexity = O(V)
-	union_set() - Time complexity = O(V)
+	find_set() - Time complexity == < O(V)
+	union_set() - Time complexity = O(V) - Ranking will mitigate O(V) time complexity of find_set()
 	
-	Space complexity: O(E + V)
+	Space complexity: O(V)
 */
 
 class Graph {
