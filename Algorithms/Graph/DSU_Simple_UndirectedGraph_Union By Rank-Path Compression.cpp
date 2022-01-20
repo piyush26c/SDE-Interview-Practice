@@ -36,7 +36,7 @@ class Graph {
 		if (parent[node] == -1) {
 			return node;
 		}
-		return parent[node] = find_set(parent[node], parent);	// only change
+		return parent[node] = find_set(parent[node], parent);	// path compression optimization
 	}
 
 	void union_set(int node1, int node2, vector<int> &parent, vector<int> &rank) {
