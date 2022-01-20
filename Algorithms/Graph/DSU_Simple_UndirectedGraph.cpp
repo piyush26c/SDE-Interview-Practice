@@ -11,7 +11,7 @@ using namespace std;
 	find_set() - Time complexity = O(V)
 	union_set() - Time complexity = O(V)
 	
-	Space complexity: O(E + V)
+	Space complexity: O(V)
 */
 
 class Graph {
