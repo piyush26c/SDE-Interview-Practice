@@ -6,6 +6,7 @@ using namespace std;
 */
 
 // cycle detection code for undirected graph
+// Reference: https://cp-algorithms.com/data_structures/disjoint_set_union.html
 
 /*
 	find_set() - Time complexity
