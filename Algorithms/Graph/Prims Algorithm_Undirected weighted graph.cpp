@@ -14,7 +14,7 @@ using namespace std;
 
 class Graph {
 	int V;
-	vector<vector<pair<int, int>> graph;
+	vector<vector<pair<int, int>>> graph;
 	
 	public:
 	Graph(int n) {
@@ -30,13 +30,13 @@ class Graph {
 	int MST_Prims(int source) {
 		int pathLength = 0; // should be minimum :)
 		
-		priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>> pQueue;
+		priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pQueue;
 		vector<bool> visited(V + 1, false); // +1 for as node starts from 1
 		
 		pQueue.push({0, source}); // first: weight; second: node
 		
 		while(!pQueue.empty()) {
-			auto best = pQueue.front(); // best here is node having minimum weight and is unvisited
+			auto best = pQueue.top(); // best here is node having minimum weight and is unvisited
 			pQueue.pop();
 			
 			int to = best.second;
