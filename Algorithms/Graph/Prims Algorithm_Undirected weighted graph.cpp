@@ -43,7 +43,7 @@ class Graph {
 			int weight = best.first;
 			
 			if (visited[to]) {
-				// discard the edge and continue | this if will be needed for those nodes whose didn't carry minimum weight and present in pQueue and at the end when pQueue till last even after MST we had got.
+				// discard the edge and continue | this is needed for those nodes who didn't carry minimum weight and remain present in pQueue and last even after MST we had got.
 				continue;
 			}
 			
