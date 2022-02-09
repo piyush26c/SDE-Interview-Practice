@@ -3,7 +3,7 @@ using namespace std;
 
 /*
 	Dijkstras Algorithm
-		| _ SSP
+		| _ SSSP
 		| _ only work for "POSITIVE" weights
 
 /*
