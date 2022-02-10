@@ -120,6 +120,13 @@ int main(){
 	return 0;
 } // end-main
 
+/*
+	Instead of set<pair<int, int>> we can use priority_queue<pair<int, int>, vector<pair<int ,int>>, greater<pair<int, int>>>
+	but priority_queue won't update the existing nodes weight in queue it will insert another pair (updated with weight)
+	and bcz of this priority_queue will contain unnecessary nodes thus led to increase space an time complexity.
+*/
+
+
 
 /*
 test case - 1
