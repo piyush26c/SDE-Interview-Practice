@@ -7,7 +7,10 @@ using namespace std;
 		| _ only work for "POSITIVE" weights
 
 /*
-	Time complexity: O(V^2)
+	Time complexity: O(E * log(E))
+								| _ if E ~ V*(V - 1) == E ~ V^2
+					
+					= O(E * log(V))
 */
 
 const int INF = INT_MAX;
@@ -46,7 +49,7 @@ class Graph {
 
 			int distanceTillNow = best->first;
 			int from = best->second;
-			S.erase(best);	// O(V)
+			S.erase(best);	// O(log(V))
 
 			for (auto [to, toWeight] : graph[from]) {
 
@@ -125,7 +128,6 @@ int main(){
 	but priority_queue won't update the existing nodes weight in queue it will insert another pair (updated with weight)
 	and bcz of this priority_queue will contain unnecessary nodes thus led to increase space an time complexity.
 */
-
 
 
 /*
