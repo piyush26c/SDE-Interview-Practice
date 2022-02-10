@@ -18,7 +18,7 @@ class Graph {
 	vector<vector<pair<int, int>>> graph;	// pointer because initially we don't know the number of nodes in graph
 	vector<int> restorePath;	// stores the shortest path from source to "to" node
 	int source;
-	
+
 	public:
 	Graph(int V, int source) {
 		this->V = V;
@@ -26,70 +26,70 @@ class Graph {
 		graph.resize(V);
 		restorePath.resize(V);
 	}
-	
+
 	void addEdge(int node1, int node2, int weight) {
 		graph[node1].push_back({node2, weight});
 		graph[node2].push_back({node1, weight});
 	} // end-addEdge
-	
+
 	void Dijkstra() {
 		vector<int> distance(V, INF);
 		set<pair<int, int>> S;
-		
+
 		// initialization
 		S.insert({0, source}); // {weight, source_node}
 		distance[source] = 0;
 		restorePath[source] = source;
-		
+
 		while(!S.empty()) {
 			auto best = S.begin();
-			
+
 			int distanceTillNow = best->first;
 			int from = best->second;
 			S.erase(best);	// O(V)
-						
+
 			for (auto [to, toWeight] : graph[from]) {
-				
+
 				if ((distanceTillNow + toWeight) < distance[to]) {
 					// remove if "to" already exists in S
-					auto ngbrFound = S.find({distance[to], to});
-					if (ngbrFound != S.end()) {
-						S.erase(ngbrFound);					
-					} // end-if					
-					
+					auto toFound = S.find({distance[to], to});
+					if (toFound != S.end()) {
+						S.erase(toFound);
+					} // end-if
+
 					distance[to] = distanceTillNow + toWeight;
 					S.insert({distance[to], to});
-					
+
 					restorePath[to] = from;
 				} // end-if
-			} // end-for	
+			} // end-for
 		} // end-while
-		
+
 		for (int i = 0; i < V; i++) {
 			cout << "\nNode: " << i << " Cost: " << distance[i];
 		} // end-for
 		return;
 	} // end-Dijkstra
-	
+
 	void getPath(int to) {
-		vector<int> path;	
-		
+		vector<int> path;
+
 		for (int i = to; i != source; ) {
 			path.push_back(i);
 			i = restorePath[i];
 		} // end-for
-		
+
 		path.push_back(source);
-		
+
 		reverse(path.begin(), path.end());
-		
+
 		cout << "\nShortest Path from " << source << " to " << to << " : ";
 		for(auto node : path) {
 			cout << node << " ";
 		} // end-for
 		return;
 	} // end-getPath
-	
+
 }; // end-Graph
 
 int main(){
@@ -110,19 +110,19 @@ int main(){
 	g.addEdge(3, 5, 14);
 	g.addEdge(3, 4, 9);
 	g.addEdge(5, 4, 10);
-	
+
 	g.Dijkstra();
-	
+
 	for (int i = source + 1; i < V; i++) {
 		g.getPath(i);
 	} // end-for
-	
+
 	return 0;
-} // end-main	
+} // end-main
 
 
 /*
-test case - 1 
+test case - 1
 
 int V = 9;
 int source = 0;
