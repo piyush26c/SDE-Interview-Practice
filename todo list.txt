@@ -1,4 +1,11 @@
 // to do
++ Bellman Ford          ------->  https://cp-algorithms.com/graph/bellman_ford.html
+	| _ average case optimization
+	| _ get negative cyle - path
+	| _ Shortest Path Fastest Algorithm (SPFA)  ----> https://cp-algorithms.com/graph/finding-negative-cycle-in-graph.html
+		| _ https://en.wikipedia.org/wiki/Shortest_Path_Faster_Algorithm
+			| _ read optimizations section mentioned in last of the webpage
+		
 + bipartite graph code - [BFS]
 + DFS (iterative) implementation of topological sort.
 
