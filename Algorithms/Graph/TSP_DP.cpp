@@ -8,7 +8,7 @@ using namespace std;
 		| _ total-subproblems = (2 ^ n) * n
 									| _ because DP table has this [] (2 * n) * n ] entries!
 		| _ time taken by each sub-problem to solve = O(n)
-	
+
 	-- this is exponential but better than brute-force = (n - 1)!
 */
 
@@ -19,11 +19,13 @@ class Graph {
 
 	int V;	// number of nodes
 	vector<vector<int>> graph;
+	vector<vector<int>> parent; // for path = storing child of current node
 
 	public:
 	Graph(int V) {
 		this->V = V;
 		graph.resize(V, vector<int>(V, INF));
+		parent.resize(V, vector<int>(1 << V, -1));
 
 		for (int i = 0; i < V; i++)
 			graph[i][i] = 0;
@@ -52,7 +54,9 @@ class Graph {
 	} // end-addEdge
 
 	// recursive solution
-	// setOfCities here is state - stateNo
+	// setOfCities here is state - stateNo - a.k.a. [[mask]]
+	// city = from
+	// choice = to
 	int tsp_helper(int setOfCities, int city, vector<vector<int>> &dp) {
 
 		// base case
@@ -72,8 +76,13 @@ class Graph {
 		for (int choice = 0; choice < V; choice++) {
 			// need to check whether city is visited or not
 			if ((setOfCities & (1 << choice)) == 0) {
-				int subProblem = graph[city][choice] + tsp_helper(setOfCities | (1 << choice), choice, dp);
+				int current_cost = tsp_helper(setOfCities | (1 << choice), choice, dp);
+				int subProblem = graph[city][choice] + current_cost;
+				if (subProblem < ans) {
+					parent[city][setOfCities] = choice;
+				}
 				ans = min(ans, subProblem);
+
 			}
 		}
 		dp[setOfCities][city] = ans;
@@ -83,6 +92,26 @@ class Graph {
 	int tsp_bruteforce() {
 		vector<vector<int>> dp(1 << V, vector<int>(V, -1));
 		return tsp_helper(1, 0, dp); // setOfCities(each bit of this(binary) represents whether city is visited or not), current_city_number
+	}
+
+	vector<int> getPath() {
+		// as node number starts from 0
+		int current_node = 0;
+		// thus,
+		int mask = 1;
+
+		vector<int> path;
+
+		do {
+			path.push_back(current_node);
+			current_node = parent[current_node][mask];
+			if (current_node == -1) break;
+			mask = mask | (1 << current_node);	// 1 << <any_negative_value> yields	 output => 0
+		} while(current_node != -1);
+
+		path.push_back(0); // makes round trip complete!
+
+		return path;
 	}
 
 }; // end-Graph
@@ -98,6 +127,13 @@ int main(){
 	g.addEdge();
 
 	cout << "\nDistance (TSP [Brute Force]): " << g.tsp_bruteforce();
+
+	cout << "\nTSP Path: \n";
+	vector<int> path = g.getPath();
+
+	for (auto node : path) {
+		cout << node << " -> ";
+	}
 
 	return 0;
 } // end-main
