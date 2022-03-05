@@ -2,9 +2,12 @@
 using namespace std;
 
 // Algorithm to Find Articulation Point and Bridges
+// This algorithm is also called as """ TARJAN ALGORITHM"""
+// https://cp-algorithms.com/graph/bridge-searching.html
+
 /*
 	Time complexity:
-		| _ O(V) ~ (Time complexity of DFS)
+		| _ O(V + E) ~ (Time complexity of DFS)
 
 	Space complexity:
 		| _ O(V + E)
