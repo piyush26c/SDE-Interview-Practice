@@ -31,7 +31,7 @@ class Graph {
 	public:
 	Graph(int V) {
 		this->V = V;
-        graph.resize(V + 1);
+		graph.resize(V + 1);
 		visited.resize(V + 1, false);
 		discover.resize(V + 1);
 		lowest.resize(V + 1);
@@ -99,13 +99,12 @@ class Graph {
 
 int main() {
 
-	Graph g(7);
+	Graph g(5);
 	g.add_edge(1, 2);
+	g.add_edge(1, 5);
+	g.add_edge(1, 4);
 	g.add_edge(2, 3);
-	g.add_edge(2, 4);
-	g.add_edge(2, 5);
-	g.add_edge(1, 7);
-	g.add_edge(4, 6);
+	g.add_edge(3, 4);
 
 	g.dfs(1, 0);
 
@@ -139,4 +138,25 @@ int main() {
 	g.add_edge(2, 4);
 	g.add_edge(4, 3);
 	g.add_edge(4, 5);
+*/
+
+/*
+	Test Case - 3:
+
+	Graph g(7);
+	g.add_edge(1, 2);
+	g.add_edge(2, 3);
+	g.add_edge(2, 4);
+	g.add_edge(2, 5);
+	g.add_edge(1, 7);
+
+*/
+
+/*
+	Test Case - 4:
+
+	Graph g(3);
+	g.add_edge(1, 2);
+	g.add_edge(1, 3);
+	g.add_edge(2, 3);
 */
