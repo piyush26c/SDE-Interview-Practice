@@ -8,8 +8,12 @@
 		
 + bipartite graph code - [BFS]
 + DFS (iterative) implementation of topological sort.
-
-
++ Rabin Karp string matching
++ Max Min Flow (Graph)
++ Segment Tree
++ Knapsack
+	| _ unbounded knapsack...(https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews)
++ print all subsequences using POWER SET (watch striver video)
 
 
 
