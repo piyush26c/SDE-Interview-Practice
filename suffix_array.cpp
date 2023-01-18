@@ -11,6 +11,13 @@ using namespace std;
 SUFFIX ARRAY IMPLEMENTATION
 Reference: https://codeforces.com/edu/course/2/lesson/2/1
 
+Time Complexity
+	| _ n*log(n) + log(n) * (n * log(n))
+		| _ O(n * (log(n)) ^ 2)
+
+Space Complexity
+	| _ O(n)
+
 */
 
 int main () {
@@ -37,7 +44,7 @@ int main () {
   	}
 
   	// sort the arr
-  	sort(arr.begin(), arr.end());
+  	sort(arr.begin(), arr.end()); // O(n * log(n))
 
   	// populate values in suffix_array
   	for (int indx = 0; indx < n; indx++) {
@@ -59,14 +66,14 @@ int main () {
 
 
   int k = 0;
-  while((1 << k) < n) {
+  while((1 << k) < n) { // O(log(n))
   	// from phase k to k + 1
   	vector<pair<pair<int, int>, int>> arr(n);  // {{left, right}, indx}
   	for (int indx = 0; indx < n; indx++) {
   		arr[indx] = {{classes[indx], classes[(indx + (1 << k)) % n]}, indx};
   	}
 
-  	sort(arr.begin(), arr.end());
+  	sort(arr.begin(), arr.end()); // O(n * log(n))
 
   	// populate values in sufffix_array
   	for (int indx = 0; indx < n; indx++) {
