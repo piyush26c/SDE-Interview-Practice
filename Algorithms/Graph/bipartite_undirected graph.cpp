@@ -12,7 +12,7 @@ class Graph {
 	
 	void addEdge(int from, int to) {
 		l[from].push_back(to);
-        l[to].push_back(from);		
+		l[to].push_back(from);		
 	}
 	
 	bool dfs_helper(int node, int parent, vector<int> &visited, int color) {
