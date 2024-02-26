@@ -282,6 +282,13 @@ int main() {
 	//segment tree array takes 2*N - 1 space but we will start from index 1 so will allocate 2*N space
 	vector<int> segmentTree (2 * sizeOfInputArr);
 	buildSegmentTree(inputArr, segmentTree, 0, sizeOfInputArr - 1, 1);
+
+	/**
+	 * If inputArr[i] >= 1, then use one indexing -> 2*i & 2*i + 1
+	 * If inputArr[i] >= 0, then use zero indexing - > 2*i + 1, 2*i + 2
+	*/
+
+
 	//printing segmentTree array
 	for (auto &x : segmentTree)
 		cout << x << "\n";
