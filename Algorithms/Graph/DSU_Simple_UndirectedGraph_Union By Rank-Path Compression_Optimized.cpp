@@ -39,8 +39,9 @@ class DSU {
 	}
 		
 	/*
-	using rank (group size) here. When we have a non-negative value in dsu, it's a link to the parent. 
-	Parents has a negative value which is the size of the group.	
+	using rank (group size) here. When we have a non-negative value in dsu, it's a link to the parent, means parent node number. 
+	Parents has a negative value which is the size of the component and that node is the head of that component. 
+ 	Jitne negative values utne components and jo value hai abs(val) vo size of the component.
 	*/
 	void union_set(int node1, int node2) {
 		int s1 = find_set(node1);
